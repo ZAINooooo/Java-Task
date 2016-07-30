@@ -1,0 +1,51 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        Scanner input=new Scanner(System.in);
+
+        System.out.print("\t\tPress\n1:  Play\n2:  Quit\t");
+        int option=input.nextInt();
+        int tries =5;
+        switch (option){
+            case 1:
+
+
+               do{
+                   Random rand = new Random();
+                   int  r_no = rand.nextInt(10) + 1;
+                System.out.print("\tEnter any Number 1-10\t");
+                int input_no=input.nextInt();
+
+                   System.out.println(r_no);
+
+                   if (input_no==r_no){
+                    System.out.println("**********You Win***********\tRandom Number is:   "+r_no);
+                       System.exit(0);
+
+
+                   }
+                else
+                    System.out.println("**********You Lose**********");
+                   tries--;
+                   if (tries == 0){
+                       System.out.println("GAME OVER");
+                       System.out.println("You dont have enough credit, Add Credit?");
+
+                   }
+                }while (tries > 0);
+                break;
+
+
+            case 2:
+                System.exit(0);
+                break;
+        }
+
+    }
+}
